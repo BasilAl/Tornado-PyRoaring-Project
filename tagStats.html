@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+    <a href="/">BackToIndex</a>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1> User Tag Statistics</h1>
+        <label>Tag Statistics - How many users with tag?</label>
+        <select id= 'tagStats'><option>all</option></select>
+        <button id = 'btnShow'>Show Statistics</button>
+        <ol id='listStats'><li>stat1</li></ol>
+
+
+        <script>
+        const tagStats = document.getElementById("tagStats")
+        const showStats = document.getElementById("btnShow")
+        const tagNo = document.getElementById("tagStats")
+        const listStats = document.getElementById("listStats")
+        for (let i=1;i<11;i++){
+            let o = document.createElement("option")
+            o.textContent=i
+            tagStats.appendChild(o)
+        }
+
+        showStats.addEventListener("click", e=>{
+            let tagId=tagStats.value;
+            
+            fetch(`http://localhost:8882/tagStats/${tagId}`,{"method":"GET"})
+            .then(response=>response.json())
+            .then(jsonResponse=>jsonResponse.forEach(item =>{
+                let o = document.createElement("li")
+                o.textContent = item
+                listStats.appendChild(o)
+                alert(item)
+                
+
+            }))
+    
+            
+        })
+
+        
+
+
+        </script>
+        <script src="" async defer></script>
+    </body>
+</html>

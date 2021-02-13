@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Tornado RoaringBitmap API</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <label>Tornado RoaringBitmap</label><br><br>
+        <a href="/sessionmanagement">Long Unlogged Users</a><br>
+        <a href="/tagStats/0">Tag Statistics</a><br>
+        <a href="/users/0001">Users</a><br>
+        <a href="/async">1000 Asynchronous Requests</a><br>
+        **The Async Requests above seem to work, meaning they return response objects,<br>
+        but I couldn't build the request handlers in a way that the response objects were usable.<br>
+        At least I hope it's so.**
+
+
+        
+        
+        <!-- DEPRECATED
+        <select id = 'userTags' label="User Tags">
+        <option>All</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        </select>
+        <ol id="Results"></ol>
+        
+        <button id = 'btnTagAmount'>Amount of Users with tag</button>
+        <button id = 'btnUsersWithTag'>Show Users with tag</button>
+        
+        <script>
+            const tag = document.getElementById("userTags") //all,1,2,3...
+            const tagAmount = document.getElementById("btnTagAmount")
+            const usersWithTag = document.getElementById("btnUsersWithTag")
+            const results = document.getElementById("Results")
+            alert(tag.value)
+            
+
+            tagAmount.addEventListener("click", e=>{
+                fetch(`http://localhost:8882/list?tag=${tag.value}`, {"method":"POST"})
+                .then(response => response.json())
+                .then(jsonResponse =>forEach(item => {
+                    let o = document.CreateElement("li")
+                    o.texContent = item
+                    console.log(item)
+                    results.appendChild(o)
+                }))
+                
+
+            })
+
+        </script> 
+        -->
+        <script src="" async defer></script>
+    </body>
+</html>
